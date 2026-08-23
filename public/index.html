@@ -127,6 +127,18 @@
     font-size:10.5px; font-weight:700; padding:5px 12px; border-radius:100px;
     background:var(--accent, var(--gold)); color:#14110f;
   }
+  .app-price{
+    position:absolute; top:16px; left:16px; z-index:1;
+    font-size:17px; font-weight:800; padding:9px 18px; border-radius:100px;
+    background:linear-gradient(135deg, #ff5f6d, #ffc371);
+    color:#14110f;
+    box-shadow:0 4px 14px rgba(0,0,0,0.35);
+    letter-spacing:0.01em;
+  }
+  .app-price-line{
+    font-size:13px; font-weight:700; color:var(--accent-soft, var(--gold-soft));
+    margin-bottom:10px;
+  }
 
   .app-body{padding:26px 26px 30px; display:flex; flex-direction:column; flex:1;}
   .app-name{font-family:'Battambang',serif; font-size:23px; font-weight:700; margin-bottom:9px;}
@@ -197,11 +209,13 @@
 
     <a href="https://songwriter-server.onrender.com/khmer-songwriter-landing.html" class="app-card songwriter-card" target="_blank" rel="noopener">
       <div class="app-cover songwriter-cover" style="background-image:url('songwriter-thumb.jpg')">
+        <span class="app-price">🎵 $8/ខែ</span>
         <span class="app-popular khmer">ពេញនិយម</span>
         <div class="app-cover-label">Songwriter</div>
       </div>
       <div class="app-body">
         <div class="app-name khmer">និពន្ធចម្រៀងខ្មែរ</div>
+        <div class="app-price-line khmer">ត្រឹមតែ $8/ខែ — ចាប់ផ្តើមតែងបទភ្លាមៗ!</div>
         <p class="app-tagline khmer">សរសេរបទចម្រៀងខ្មែរជាមួយ AI ពីមួយបន្ទាត់កំណាព្យ ទៅជាបទចម្រៀងពេញលក្ខណៈ ព្រមទាំងវីដេអូផ្ទាំងខាងក្រោយ និងសំឡេងច្រៀង</p>
         <div class="app-features khmer">
           <span>តែងទំនុកច្រៀង AI</span>
@@ -214,10 +228,12 @@
 
     <a href="https://khmer-video-translator.netlify.app" class="app-card translator-card" target="_blank" rel="noopener">
       <div class="app-cover translator-cover">
+        <span class="app-price">🎬 $3/ខែ</span>
         <div class="app-cover-label">Video Translator</div>
       </div>
       <div class="app-body">
         <div class="app-name khmer">កម្មវិធីបកប្រែវីដេអូខ្មែរ</div>
+        <div class="app-price-line khmer">ត្រឹមតែ $3/ខែ — បកប្រែវីដេអូភ្លាមៗ!</div>
         <p class="app-tagline khmer">បកប្រែវីដេអូណាមួយឱ្យទៅជាភាសាខ្មែរធម្មជាតិ ដោយ AI Dubbing ជ្រើសរើសសំឡេងអ្នកនិយាយច្រើនបែប នាំចេញបានក្នុងមួយចុច</p>
         <div class="app-features khmer">
           <span>AI Dubbing</span>
