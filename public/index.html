@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>កម្មវិធី AI ខ្មែរ — Songwriter & Video Translator</title>
+<meta name="description" content="ជ្រើសរើសកម្មវិធី AI ខ្មែររបស់អ្នក — និពន្ធចម្រៀង ឬបកប្រែវីដេអូ">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="កម្មវិធី AI ខ្មែរ">
+<meta property="og:title" content="កម្មវិធី AI ខ្មែរ — Songwriter & Video Translator">
+<meta property="og:description" content="ជ្រើសរើសកម្មវិធី AI ខ្មែររបស់អ្នក — និពន្ធចម្រៀង ឬបកប្រែវីដេអូ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #14110f;
+    --bg-2: #1c1712;
+    --card: #241e19;
+    --ink: #f4e9d4;
+    --ink-soft: rgba(244,233,212,0.68);
+    --ink-faint: rgba(244,233,212,0.42);
+    --gold: #c9a24b;
+    --gold-soft: #e0a45a;
+    --teal: #2a9d8f;
+    --teal-soft: #52b8ab;
+    --line: rgba(244,233,212,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    background-image: radial-gradient(circle at 15% 10%, rgba(201,162,75,0.08) 0%, transparent 45%),
+                       radial-gradient(circle at 85% 90%, rgba(42,157,143,0.08) 0%, transparent 45%);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    line-height:1.6;
+  }
+  .khmer{font-family:'Battambang',serif;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 24px;}
+
+  header{padding:56px 0 20px; text-align:center;}
+  .brand-mark{
+    width:56px; height:56px; border-radius:16px; margin:0 auto 18px;
+    background:linear-gradient(135deg, var(--gold), var(--teal));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Battambang',serif; font-weight:700; font-size:24px; color:#14110f;
+  }
+  h1{
+    font-family:'Battambang',serif; font-size:clamp(28px,4.5vw,42px); font-weight:700;
+    margin-bottom:12px; color:var(--ink);
+  }
+  header p{color:var(--ink-soft); font-size:16px; max-width:520px; margin:0 auto;}
+
+  .app-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:24px;
+    padding:48px 0 64px;
+  }
+  @media (max-width:760px){ .app-grid{grid-template-columns:1fr;} }
+
+  .app-card{
+    background:var(--card); border:1px solid var(--line); border-radius:20px;
+    overflow:hidden; display:flex; flex-direction:column;
+    transition:transform .18s ease, border-color .18s ease;
+  }
+  .app-card:hover{transform:translateY(-4px); border-color:var(--accent, var(--gold));}
+
+  .app-cover{
+    height:180px; background-size:cover; background-position:center;
+    position:relative; display:flex; align-items:flex-end; padding:18px;
+  }
+  .app-cover::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(20,17,15,0.85), transparent 60%);
+  }
+  .app-cover-label{
+    position:relative; z-index:1; font-size:12px; font-weight:700; letter-spacing:0.08em;
+    color:var(--accent-soft, var(--gold-soft)); text-transform:uppercase;
+  }
+
+  .app-body{padding:24px 24px 28px; display:flex; flex-direction:column; flex:1;}
+  .app-name{font-family:'Battambang',serif; font-size:22px; font-weight:700; margin-bottom:8px;}
+  .app-tagline{font-size:14px; color:var(--ink-soft); margin-bottom:16px; flex:1;}
+  .app-features{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
+  .app-features span{
+    font-size:11.5px; padding:4px 10px; border-radius:100px;
+    background:rgba(244,233,212,0.06); color:var(--ink-faint); font-weight:600;
+  }
+  .app-cta{
+    display:block; text-align:center; padding:13px; border-radius:12px;
+    background:var(--accent, var(--gold)); color:#14110f; font-weight:700; font-size:14.5px;
+    transition:opacity .15s ease;
+  }
+  .app-cta:hover{opacity:0.88;}
+
+  .songwriter-card{--accent:var(--gold); --accent-soft:var(--gold-soft);}
+  .translator-card{--accent:var(--teal); --accent-soft:var(--teal-soft);}
+
+  .songwriter-cover{background-color:#2b2015;}
+  .translator-cover{background:linear-gradient(135deg, #0f2e2a, #1c1712);}
+
+  footer{
+    text-align:center; padding:32px 0 48px; color:var(--ink-faint); font-size:13px;
+    border-top:1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="brand-mark">AI</div>
+  <h1 class="khmer">កម្មវិធី AI ខ្មែររបស់ខ្ញុំ</h1>
+  <p class="khmer">ជ្រើសរើសកម្មវិធីដែលអ្នកចង់ប្រើ — និពន្ធបទចម្រៀង ឬបកប្រែវីដេអូជាភាសាខ្មែរ</p>
+</header>
+
+<div class="wrap">
+  <div class="app-grid">
+
+    <a href="https://songwriter-server.onrender.com/khmer-songwriter-landing.html" class="app-card songwriter-card" target="_blank" rel="noopener">
+      <div class="app-cover songwriter-cover" style="background-image:url('songwriter-thumb.jpg')">
+        <div class="app-cover-label">Songwriter</div>
+      </div>
+      <div class="app-body">
+        <div class="app-name khmer">និពន្ធចម្រៀងខ្មែរ</div>
+        <p class="app-tagline khmer">សរសេរបទចម្រៀងខ្មែរជាមួយ AI ពីមួយបន្ទាត់កំណាព្យ ទៅជាបទចម្រៀងពេញលក្ខណៈ ព្រមទាំងវីដេអូផ្ទាំងខាងក្រោយ និងសំឡេងច្រៀង</p>
+        <div class="app-features khmer">
+          <span>តែងទំនុកច្រៀង AI</span>
+          <span>វីដេអូ AI</span>
+          <span>សំឡេងច្រៀង</span>
+        </div>
+        <span class="app-cta khmer">ចូលប្រើ Songwriter →</span>
+      </div>
+    </a>
+
+    <a href="https://khmer-video-translator.netlify.app" class="app-card translator-card" target="_blank" rel="noopener">
+      <div class="app-cover translator-cover">
+        <div class="app-cover-label">Video Translator</div>
+      </div>
+      <div class="app-body">
+        <div class="app-name khmer">កម្មវិធីបកប្រែវីដេអូខ្មែរ</div>
+        <p class="app-tagline khmer">បកប្រែវីដេអូណាមួយឱ្យទៅជាភាសាខ្មែរធម្មជាតិ ដោយ AI Dubbing ជ្រើសរើសសំឡេងអ្នកនិយាយច្រើនបែប នាំចេញបានក្នុងមួយចុច</p>
+        <div class="app-features khmer">
+          <span>AI Dubbing</span>
+          <span>សំឡេងច្រើនបែប</span>
+          <span>ស្វែងរកអ្នកនិយាយស្វ័យប្រវត្តិ</span>
+        </div>
+        <span class="app-cta khmer">ចូលប្រើ Video Translator →</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer class="khmer">
+  បង្កើតដោយ AI — កម្មវិធីទាំងអស់ត្រូវបានអភិវឌ្ឍសម្រាប់អ្នកប្រើប្រាស់ខ្មែរ
+</footer>
+
+</body>
+</html>
