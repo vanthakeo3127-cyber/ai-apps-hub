@@ -10,6 +10,14 @@
 <meta property="og:site_name" content="កម្មវិធី AI ខ្មែរ">
 <meta property="og:title" content="កម្មវិធី AI ខ្មែរ — Songwriter & Video Translator">
 <meta property="og:description" content="ជ្រើសរើសកម្មវិធី AI ខ្មែររបស់អ្នក — និពន្ធចម្រៀង ឬបកប្រែវីដេអូ">
+<meta property="og:image" content="https://ai-apps-hub-u0wt.onrender.com/hub-og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="កម្មវិធី AI ខ្មែរ — Songwriter & Video Translator">
+<meta name="twitter:description" content="ជ្រើសរើសកម្មវិធី AI ខ្មែររបស់អ្នក — និពន្ធចម្រៀង ឬបកប្រែវីដេអូ">
+<meta name="twitter:image" content="https://ai-apps-hub-u0wt.onrender.com/hub-og-cover.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -30,8 +38,8 @@
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     background:var(--bg);
-    background-image: radial-gradient(circle at 15% 10%, rgba(201,162,75,0.08) 0%, transparent 45%),
-                       radial-gradient(circle at 85% 90%, rgba(42,157,143,0.08) 0%, transparent 45%);
+    background-image: radial-gradient(circle at 15% 10%, rgba(201,162,75,0.10) 0%, transparent 45%),
+                       radial-gradient(circle at 85% 90%, rgba(42,157,143,0.10) 0%, transparent 45%);
     color:var(--ink);
     font-family:'Inter',sans-serif;
     min-height:100vh;
@@ -39,20 +47,50 @@
   }
   .khmer{font-family:'Battambang',serif;}
   a{color:inherit; text-decoration:none;}
-  .wrap{max-width:1000px; margin:0 auto; padding:0 24px;}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
 
-  header{padding:56px 0 20px; text-align:center;}
-  .brand-mark{
-    width:56px; height:56px; border-radius:16px; margin:0 auto 18px;
+  /* NAV */
+  nav{
+    padding:20px 0; border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .nav-brand{display:flex; align-items:center; gap:12px;}
+  .nav-mark{
+    width:38px; height:38px; border-radius:11px;
     background:linear-gradient(135deg, var(--gold), var(--teal));
     display:flex; align-items:center; justify-content:center;
-    font-family:'Battambang',serif; font-weight:700; font-size:24px; color:#14110f;
+    font-family:'Battambang',serif; font-weight:700; font-size:16px; color:#14110f;
   }
+  .nav-name{font-family:'Battambang',serif; font-weight:700; font-size:16px;}
+  .nav-sub{font-size:10.5px; color:var(--ink-faint); letter-spacing:0.08em;}
+  .nav-badge{
+    font-size:12px; font-weight:600; color:var(--gold-soft);
+    border:1px solid rgba(201,162,75,0.35); border-radius:100px;
+    padding:6px 14px; background:rgba(201,162,75,0.06);
+  }
+
+  /* HERO */
+  header{padding:64px 0 24px; text-align:center;}
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600;
+    color:var(--teal-soft); border:1px solid rgba(42,157,143,0.35); border-radius:100px;
+    padding:6px 16px; margin-bottom:24px; background:rgba(42,157,143,0.07);
+  }
+  .hero-eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--teal-soft);}
   h1{
-    font-family:'Battambang',serif; font-size:clamp(28px,4.5vw,42px); font-weight:700;
-    margin-bottom:12px; color:var(--ink);
+    font-family:'Battambang',serif; font-size:clamp(30px,5vw,46px); font-weight:700;
+    margin-bottom:16px; color:var(--ink); line-height:1.3;
   }
-  header p{color:var(--ink-soft); font-size:16px; max-width:520px; margin:0 auto;}
+  h1 .accent{color:var(--gold-soft);}
+  header p{color:var(--ink-soft); font-size:16px; max-width:560px; margin:0 auto;}
+
+  /* TRUST STRIP */
+  .trust-strip{
+    display:flex; justify-content:center; gap:36px; flex-wrap:wrap;
+    padding:36px 0 8px; margin-top:16px;
+  }
+  .trust-item{display:flex; align-items:center; gap:8px; font-size:13px; color:var(--ink-faint); font-weight:600;}
+  .trust-item .ti-dot{width:5px; height:5px; border-radius:50%; background:var(--gold-soft);}
 
   .app-grid{
     display:grid; grid-template-columns:1fr 1fr; gap:24px;
@@ -63,37 +101,50 @@
   .app-card{
     background:var(--card); border:1px solid var(--line); border-radius:20px;
     overflow:hidden; display:flex; flex-direction:column;
-    transition:transform .18s ease, border-color .18s ease;
+    box-shadow:0 1px 0 rgba(0,0,0,0.2);
+    transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
   }
-  .app-card:hover{transform:translateY(-4px); border-color:var(--accent, var(--gold));}
+  .app-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--accent, var(--gold));
+    box-shadow:0 16px 32px -12px rgba(0,0,0,0.5);
+  }
 
   .app-cover{
-    height:180px; background-size:cover; background-position:center;
-    position:relative; display:flex; align-items:flex-end; padding:18px;
+    height:190px; background-size:cover; background-position:center;
+    position:relative; display:flex; align-items:flex-end; padding:20px;
   }
   .app-cover::after{
     content:''; position:absolute; inset:0;
-    background:linear-gradient(to top, rgba(20,17,15,0.85), transparent 60%);
+    background:linear-gradient(to top, rgba(20,17,15,0.9), transparent 60%);
   }
   .app-cover-label{
-    position:relative; z-index:1; font-size:12px; font-weight:700; letter-spacing:0.08em;
+    position:relative; z-index:1; font-size:12px; font-weight:700; letter-spacing:0.1em;
     color:var(--accent-soft, var(--gold-soft)); text-transform:uppercase;
   }
+  .app-popular{
+    position:absolute; top:16px; right:16px; z-index:1;
+    font-size:10.5px; font-weight:700; padding:5px 12px; border-radius:100px;
+    background:var(--accent, var(--gold)); color:#14110f;
+  }
 
-  .app-body{padding:24px 24px 28px; display:flex; flex-direction:column; flex:1;}
-  .app-name{font-family:'Battambang',serif; font-size:22px; font-weight:700; margin-bottom:8px;}
-  .app-tagline{font-size:14px; color:var(--ink-soft); margin-bottom:16px; flex:1;}
-  .app-features{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
+  .app-body{padding:26px 26px 30px; display:flex; flex-direction:column; flex:1;}
+  .app-name{font-family:'Battambang',serif; font-size:23px; font-weight:700; margin-bottom:9px;}
+  .app-tagline{font-size:14px; color:var(--ink-soft); margin-bottom:18px; flex:1;}
+  .app-features{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px;}
   .app-features span{
-    font-size:11.5px; padding:4px 10px; border-radius:100px;
-    background:rgba(244,233,212,0.06); color:var(--ink-faint); font-weight:600;
+    font-size:11.5px; padding:5px 11px; border-radius:100px;
+    background:rgba(244,233,212,0.07); color:var(--ink-faint); font-weight:600;
+    border:1px solid var(--line);
   }
   .app-cta{
-    display:block; text-align:center; padding:13px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center; gap:6px;
+    padding:14px; border-radius:12px;
     background:var(--accent, var(--gold)); color:#14110f; font-weight:700; font-size:14.5px;
-    transition:opacity .15s ease;
+    transition:opacity .15s ease, transform .15s ease;
   }
-  .app-cta:hover{opacity:0.88;}
+  .app-card:hover .app-cta{transform:translateX(2px);}
+  .app-cta:hover{opacity:0.9;}
 
   .songwriter-card{--accent:var(--gold); --accent-soft:var(--gold-soft);}
   .translator-card{--accent:var(--teal); --accent-soft:var(--teal-soft);}
@@ -101,18 +152,44 @@
   .songwriter-cover{background-color:#2b2015;}
   .translator-cover{background:linear-gradient(135deg, #0f2e2a, #1c1712);}
 
+  /* FOOTER */
   footer{
-    text-align:center; padding:32px 0 48px; color:var(--ink-faint); font-size:13px;
-    border-top:1px solid var(--line);
+    padding:40px 0 48px; border-top:1px solid var(--line);
   }
+  footer .wrap{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+  }
+  .footer-brand{display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ink-faint);}
+  .footer-links{display:flex; gap:20px; font-size:13px; color:var(--ink-faint);}
+  .footer-links a:hover{color:var(--ink-soft);}
+  @media (max-width:600px){ footer .wrap{flex-direction:column; text-align:center;} }
 </style>
 </head>
 <body>
 
+<nav>
+  <div class="wrap">
+    <div class="nav-brand">
+      <div class="nav-mark">AI</div>
+      <div>
+        <div class="nav-name khmer">កម្មវិធី AI ខ្មែរ</div>
+        <div class="nav-sub">KHMER AI SUITE</div>
+      </div>
+    </div>
+    <div class="nav-badge khmer">២ កម្មវិធីរួចរាល់ប្រើ</div>
+  </div>
+</nav>
+
 <header class="wrap">
-  <div class="brand-mark">AI</div>
-  <h1 class="khmer">កម្មវិធី AI ខ្មែររបស់ខ្ញុំ</h1>
-  <p class="khmer">ជ្រើសរើសកម្មវិធីដែលអ្នកចង់ប្រើ — និពន្ធបទចម្រៀង ឬបកប្រែវីដេអូជាភាសាខ្មែរ</p>
+  <div class="hero-eyebrow khmer"><span class="dot"></span> បង្កើតដោយ AI សម្រាប់អ្នកប្រើប្រាស់ខ្មែរ</div>
+  <h1 class="khmer">កម្មវិធី <span class="accent">AI</span> ខ្មែររបស់ខ្ញុំ</h1>
+  <p class="khmer">ជ្រើសរើសកម្មវិធីដែលអ្នកចង់ប្រើ — និពន្ធបទចម្រៀង ឬបកប្រែវីដេអូជាភាសាខ្មែរ ដោយប្រើប្រាស់ AI ទំនើប</p>
+
+  <div class="trust-strip">
+    <div class="trust-item khmer"><span class="ti-dot"></span> ១០០% ភាសាខ្មែរ</div>
+    <div class="trust-item khmer"><span class="ti-dot"></span> ដំណើរការដោយ AI</div>
+    <div class="trust-item khmer"><span class="ti-dot"></span> ប្រើប្រាស់ភ្លាមៗ</div>
+  </div>
 </header>
 
 <div class="wrap">
@@ -120,6 +197,7 @@
 
     <a href="https://songwriter-server.onrender.com/khmer-songwriter-landing.html" class="app-card songwriter-card" target="_blank" rel="noopener">
       <div class="app-cover songwriter-cover" style="background-image:url('songwriter-thumb.jpg')">
+        <span class="app-popular khmer">ពេញនិយម</span>
         <div class="app-cover-label">Songwriter</div>
       </div>
       <div class="app-body">
@@ -153,8 +231,17 @@
   </div>
 </div>
 
-<footer class="khmer">
-  បង្កើតដោយ AI — កម្មវិធីទាំងអស់ត្រូវបានអភិវឌ្ឍសម្រាប់អ្នកប្រើប្រាស់ខ្មែរ
+<footer>
+  <div class="wrap">
+    <div class="footer-brand khmer">
+      <div class="nav-mark" style="width:26px;height:26px;font-size:11px;">AI</div>
+      កម្មវិធី AI ខ្មែរ — បង្កើតសម្រាប់អ្នកប្រើប្រាស់ខ្មែរ
+    </div>
+    <div class="footer-links khmer">
+      <a href="https://songwriter-server.onrender.com/khmer-songwriter-landing.html" target="_blank">Songwriter</a>
+      <a href="https://khmer-video-translator.netlify.app" target="_blank">Video Translator</a>
+    </div>
+  </div>
 </footer>
 
 </body>
