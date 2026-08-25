@@ -94,10 +94,11 @@
   .trust-item .ti-dot{width:5px; height:5px; border-radius:50%; background:var(--gold-soft);}
 
   .app-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:24px;
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;
     padding:48px 0 64px;
   }
-  @media (max-width:760px){ .app-grid{grid-template-columns:1fr;} }
+  @media (max-width:980px){ .app-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:640px){ .app-grid{grid-template-columns:1fr;} }
 
   .app-card{
     background:var(--card); border:1px solid var(--line); border-radius:20px;
@@ -161,9 +162,11 @@
 
   .songwriter-card{--accent:var(--gold); --accent-soft:var(--gold-soft);}
   .translator-card{--accent:var(--teal); --accent-soft:var(--teal-soft);}
+  .voicecover-card{--accent:#8b6fd6; --accent-soft:#a891e8;}
 
   .songwriter-cover{background-color:#2b2015;}
   .translator-cover{background:linear-gradient(135deg, #0f2e2a, #1c1712);}
+  .voicecover-cover{background:linear-gradient(135deg, #241c33, #1c1712);}
 
   /* FOOTER */
   footer{
@@ -189,14 +192,14 @@
         <div class="nav-sub">KHMER AI SUITE</div>
       </div>
     </div>
-    <div class="nav-badge khmer">២ កម្មវិធីរួចរាល់ប្រើ</div>
+    <div class="nav-badge khmer">៣ កម្មវិធីរួចរាល់ប្រើ</div>
   </div>
 </nav>
 
 <header class="wrap">
   <div class="hero-eyebrow khmer"><span class="dot"></span> បង្កើតដោយ AI សម្រាប់អ្នកប្រើប្រាស់ខ្មែរ</div>
   <h1 class="khmer">កម្មវិធី <span class="accent">AI</span> ខ្មែររបស់ខ្ញុំ</h1>
-  <p class="khmer">ជ្រើសរើសកម្មវិធីដែលអ្នកចង់ប្រើ — និពន្ធបទចម្រៀង ឬបកប្រែវីដេអូជាភាសាខ្មែរ ដោយប្រើប្រាស់ AI ទំនើប</p>
+  <p class="khmer">ជ្រើសរើសកម្មវិធីដែលអ្នកចង់ប្រើ — និពន្ធបទចម្រៀង បកប្រែវីដេអូ ឬប្តូរសំឡេងចម្រៀងជាភាសាខ្មែរ ដោយប្រើប្រាស់ AI ទំនើប</p>
 
   <div class="trust-strip">
     <div class="trust-item khmer"><span class="ti-dot"></span> ១០០% ភាសាខ្មែរ</div>
@@ -245,6 +248,22 @@
       </div>
     </a>
 
+    <a href="https://huggingface.co/spaces/VT2026/song-voice-cover" class="app-card voicecover-card" target="_blank" rel="noopener">
+      <div class="app-cover voicecover-cover">
+        <div class="app-cover-label">Song Voice Cover</div>
+      </div>
+      <div class="app-body">
+        <div class="app-name khmer">ប្តូរសំឡេងចម្រៀង</div>
+        <p class="app-tagline khmer">ដាក់ចម្រៀងណាមួយចូល ជ្រើសរើសសំឡេងចង់ប្ដូរ រួច AI នឹងញែកភ្លេងចេញពី Vocal ដោយស្វ័យប្រវត្តិ រួចប្តូរជាសំឡេងថ្មីភ្លាមៗ</p>
+        <div class="app-features khmer">
+          <span>ញែក Vocal/ភ្លេង</span>
+          <span>ប្តូរសំឡេង AI</span>
+          <span>ឥតគិតថ្លៃ</span>
+        </div>
+        <span class="app-cta khmer">ចូលប្រើ Song Voice Cover →</span>
+      </div>
+    </a>
+
   </div>
 </div>
 
@@ -257,6 +276,7 @@
     <div class="footer-links khmer">
       <a href="https://songwriter-server.onrender.com/khmer-songwriter-landing.html" target="_blank">Songwriter</a>
       <a href="https://khmer-video-translator.netlify.app" target="_blank">Video Translator</a>
+      <a href="https://huggingface.co/spaces/VT2026/song-voice-cover" target="_blank">Song Voice Cover</a>
     </div>
   </div>
 </footer>
